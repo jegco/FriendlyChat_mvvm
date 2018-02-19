@@ -91,6 +91,8 @@ class MainActivity : AppCompatActivity(), MessageContract.View {
 
         messageViewModel.fecthConfig()
         initialize()
+
+        lifecycle.addObserver(MessageLifeCycleObserver(mChildEventListener!!))
     }
 
     override fun onStart() {
